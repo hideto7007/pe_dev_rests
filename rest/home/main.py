@@ -2,7 +2,6 @@
 ids = 1000
 pas = 2000
 
-
 class Main_Home:
     def __prepare__(ids, pas):
         id = 1000
