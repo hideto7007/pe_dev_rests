@@ -28,5 +28,5 @@ class TestSerializer(serializers.ModelSerializer):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('rest.urls')),
+    # path('', include('rest.urls')),
 ]
