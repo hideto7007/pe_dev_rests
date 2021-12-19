@@ -16,17 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
+from rest.models.models import Actor
+from rest_framework import routers, viewsets
+from rest.views import ActorViewSet
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     # path('api-auth/', include('rest_framework.urls')),
+# ]
 
 
-class TestSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fileds = ('actor_id', 'first_name', 'last_name', 'created_at', 'updated_at')
-
+router = routers.DefaultRouter()
+# Viewでquerysetの記述があればbasenameの設定はいらない
+router.register(r'actors', ActorViewSet)
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    # path('', include('rest.urls')),
+    path('api/', include('rest.api.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
