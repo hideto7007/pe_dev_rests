@@ -1,6 +1,10 @@
+import pandas as pd
+import numpy as np
+
 # ホーム画面
 ids = 1000
 pas = 2000
+
 
 class Main_Home:
     def __prepare__(ids, pas):
@@ -10,5 +14,3 @@ class Main_Home:
             print("ログインできます")
         else:
             print("ログインできません")
-
-

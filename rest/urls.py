@@ -15,6 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+
+
+class TestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fileds = ('actor_id', 'first_name', 'last_name', 'created_at', 'updated_at')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
