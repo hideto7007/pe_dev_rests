@@ -1,4 +1,4 @@
-"""rest URL Configuration
+"""job_board URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -14,25 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-
-# from rest.models.models import Actor
-# from rest.views import ActorViewSet
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     # path('api-auth/', include('rest_framework.urls')),
-# ]
-
-
-# router = routers.DefaultRouter()
-# # Viewでquerysetの記述があればbasenameの設定はいらない
-# router.register(r'actors', ActorViewSet)
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('rest.api.urls')),
-    path('', include('rest.urls')),
-    path('test_restapi/', include('rest.test_restapi.urls')),
-    path('api-auth/', include('rest_framework.urls')),
 ]
