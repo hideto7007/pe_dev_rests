@@ -71,7 +71,7 @@ def comment_new(request, snippet_id):
     snippet = get_object_or_404(Snippet, pk=snippet_id)
 
     form = CommentForm(request.POST)
-    if form.is_valid:
+    if form.is_valid():
         comment = form.save(commit=False)
         comment.commented_to = snippet
         comment.commented_by = request.user
